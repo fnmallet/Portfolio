@@ -1,9 +1,9 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import { BrowserRouter, Route, Routes } from 'react-router'
-import RootLayout from './app/RootLayout';
-import RootPage from './app/RootPage';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import '@/styles/globals.css';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import RootLayout from '@/app/RootLayout';
+import RootPage from '@/app/RootPage';
 
 const root = document.getElementById('root');
 
@@ -21,4 +21,4 @@ createRoot(root).render(
       </Routes>
     </BrowserRouter>
   </StrictMode>
-)
+);
