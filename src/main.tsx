@@ -17,7 +17,6 @@ createRoot(root).render(
         <Route path="/" element={<RootLayout />} >
           <Route index element={<RootPage />}/>
         </Route>
-
       </Routes>
     </BrowserRouter>
   </StrictMode>
