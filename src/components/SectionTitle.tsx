@@ -5,7 +5,7 @@ type SectionTitleProps = {
 }
 
 const SectionTitle = ({children}: SectionTitleProps) => {
-  return <h2 className='text-white text-[2.5rem]'>{children}</h2>;
+  return <h2 className='text-white text-[2.5rem] text-center'>{children}</h2>;
 };
 
 export default SectionTitle;
