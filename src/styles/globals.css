@@ -4,6 +4,7 @@
 @import "./fonts.css";
 @import "./colors.css";
 @import "./embla.css";
+@import "./breakpoints.css";
 
 @plugin 'tailwind-scrollbar';
 
