@@ -3,6 +3,9 @@
 @import "tailwindcss";
 @import "./fonts.css";
 @import "./colors.css";
+@import "./embla.css";
+
+@plugin 'tailwind-scrollbar';
 
 body {
   @apply font-inter;
