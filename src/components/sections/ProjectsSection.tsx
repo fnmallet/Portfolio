@@ -1,5 +1,8 @@
 import Section from '@/components/Section';
 import ImageKaizen from '@/assets/images/projects/Kaizen.png';
+import ImageIndustriasTango from '@/assets/images/projects/industrias-tango.png';
+import ImageBaugass from '@/assets/images/projects/baugass.png';
+import ImageAlfombrasTauro from '@/assets/images/projects/alfombras-tauro.png';
 import { useState } from 'react';
 import { cn } from '@/utils/cn';
 import SectionTitle from '@/components/SectionTitle';
@@ -12,6 +15,7 @@ type Project = {
   description: string;
   url: string;
   filter: FilterOption;
+  tag: string;
 }
 
 const projects: Project[] = [
@@ -19,39 +23,43 @@ const projects: Project[] = [
     name: 'Kaizen Lonas',
     src: ImageKaizen,
     year: 2025,
-    description: 'Placeholder',
+    description: 'En este proyecto el cliente que contaba con un sitio web pidió un rediseño del mismo. El desarrollo se hizo desde cero con Next.js. El sitio muestra información del cliente y todos los productos que ofrece.',
     url: 'https://kaizenlonas.com.ar/',
-    filter: 'Trabajos reales',
+    filter: 'Proyectos reales',
+    tag: 'Proyecto real'
   },
   {
-    name: 'Kaizen Lonas',
-    src: ImageKaizen,
+    name: 'Industrias Tango',
+    src: ImageIndustriasTango,
     year: 2025,
-    description: 'Placeholder',
-    url: 'https://kaizenlonas.com.ar/',
-    filter: 'Trabajos reales',
+    description: 'El proyecto consisitió en el diseño y desarrollo de una landing page que muestra los implementos ofrecidos por el cliente.',
+    url: 'https://industriastango.com.ar/',
+    filter: 'Proyectos reales',
+    tag: 'Proyecto real'
   },
   {
-    name: 'Kaizen Lonas',
-    src: ImageKaizen,
+    name: 'Baugass',
+    src: ImageBaugass,
     year: 2025,
-    description: 'Placeholder',
-    url: 'https://kaizenlonas.com.ar/',
-    filter: 'Trabajos reales',
+    description: 'Se realizó un diseño y desarrollo de una landing page para un gasista con el fin de que pueda promocionar sus servicios.',
+    url: 'https://baugass.com.ar/',
+    filter: 'Proyectos reales',
+    tag: 'Proyecto real'
   },
   {
-    name: 'Kaizen Lonas',
-    src: ImageKaizen,
+    name: 'Alfombras Tauro',
+    src: ImageAlfombrasTauro,
     year: 2025,
-    description: 'Placeholder',
+    description: 'En este proyecto se diseñó y desarrolló un sitio web para una empresa que vende principalmente alfombras. En este caso participamos dos desarrolladores frontend. Mi rol fue principalmente apoyar al otro desarrollador para crear toda la parte pública, además de ocuparme de desarrollar la interfaz para un administrador que permite al cliente modificar los productos y banners.',
     url: 'https://kaizenlonas.com.ar/',
-    filter: 'Trabajos reales',
+    filter: 'Proyectos reales',
+    tag: 'Proyecto real'
   },
 ];
 
-type FilterOption = 'Todos' | 'Trabajos reales' | 'Trabajos ficticios';
+type FilterOption = 'Todos' | 'Proyectos reales' | 'Proyectos ficticios';
 
-const filterOptions: FilterOption[] = ['Todos', 'Trabajos reales', 'Trabajos ficticios'];
+const filterOptions: FilterOption[] = ['Todos', 'Proyectos reales', 'Proyectos ficticios'];
 
 const ProjectsSection = () => {
   const [selectedFilterOption, setSelectedFilterOption] = useState<FilterOption>('Todos');
@@ -72,19 +80,35 @@ const ProjectsSection = () => {
         </button>)
       }
     </div>
-    <div className='grid grid-cols-2 gap-6'>
+    <div className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-10'>
       {
-        projects.filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index}>
-          <a href={project.url} target='_blank' rel='noopener noreferrer' className='cursor-pointer flex flex-col gap-4'>
-            <img src={project.src} alt={project.name} className='rounded-xl' />
+        projects.filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index} className='bg-black flex flex-col gap-4'>
+          <div className='flex flex-col gap-4'>
+            <a href={project.url} target='_blank' rel='noopener noreferrer'>
+              <img src={project.src} alt={project.name} className='rounded-xl' />
+            </a>
             <div className='flex flex-col gap-2'>
-              <div className='flex justify-between text-white'>
-                <h3>{project.name}</h3>
+              <div className='flex justify-between text-white items-center'>
+                <h3 className='text-[1.5rem]'>{project.name}</h3>
                 <span>{project.year.toString()}</span>
               </div>
               <p className='text-gray'>{project.description}</p>
             </div>
-          </a>
+          </div>
+          <div className='grow flex items-end'>
+            <div className='flex w-full justify-between items-center'>
+              <span className='text-gray border border-gray rounded-xl py-1 px-2 w-fit'>
+                {project.tag}
+              </span>
+              <a
+                className='text-white hover:text-primary underline'
+                href={project.url}
+                target='_blank' rel='noopener noreferrer'
+              >
+                Ver proyecto
+              </a>
+            </div>
+          </div>
         </article>)
       }
     </div>
