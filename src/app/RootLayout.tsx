@@ -12,8 +12,9 @@ const RootLayout = () => {
       <Outlet />
     </main>
     <a
-      className='fixed bottom-14 right-8 xlc:right-33.5 w-16 h-16 z-30 cursor-pointer'
+      className='fixed bottom-14 right-8 xlc:right-33.5 w-16 h-16 z-30'
       href={`#${ID.section.home}`}
+      aria-label='Ir al inicio'
     >
       <img
         src={ImageArrowTop}
