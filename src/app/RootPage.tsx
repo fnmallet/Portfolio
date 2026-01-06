@@ -1,4 +1,5 @@
 import AboutSection from '@/components/sections/AboutSection';
+import ContactSection from '@/components/sections/ContactSection';
 import FAQSection from '@/components/sections/FAQSection';
 import HeroSection from '@/components/sections/HeroSection/HeroSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
@@ -16,6 +17,7 @@ const RootPage = () => {
         <ProjectsSection />
         <FAQSection />
         <TestimonialsSection />
+        <ContactSection />
       </div>
     </div>
   </>;
