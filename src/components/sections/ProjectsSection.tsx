@@ -3,10 +3,13 @@ import ImageKaizen from '@/assets/images/projects/Kaizen.png';
 import ImageIndustriasTango from '@/assets/images/projects/industrias-tango.png';
 import ImageBaugass from '@/assets/images/projects/baugass.png';
 import ImageAlfombrasTauro from '@/assets/images/projects/alfombras-tauro.png';
+import ImageSmartech from '@/assets/images/projects/smartech.png';
+import ImageAdministradorDeStock from '@/assets/images/projects/administrador-de-stock.png';
 import { useState } from 'react';
 import { cn } from '@/utils/cn';
 import SectionTitle from '@/components/SectionTitle';
 import { ID } from '@/constants/id';
+import { IconCode, IconLink } from '../icons/IconSVGs';
 
 type Project = {
   name: string;
@@ -16,6 +19,7 @@ type Project = {
   url: string;
   filter: FilterOption;
   tag: string;
+  source?: string;
 }
 
 const projects: Project[] = [
@@ -26,7 +30,7 @@ const projects: Project[] = [
     description: 'En este proyecto el cliente que contaba con un sitio web pidió un rediseño del mismo. El desarrollo se hizo desde cero con Next.js. El sitio muestra información del cliente y todos los productos que ofrece.',
     url: 'https://kaizenlonas.com.ar/',
     filter: 'Proyectos reales',
-    tag: 'Proyecto real'
+    tag: 'Proyecto real',
   },
   {
     name: 'Industrias Tango',
@@ -55,6 +59,26 @@ const projects: Project[] = [
     filter: 'Proyectos reales',
     tag: 'Proyecto real'
   },
+  {
+    name: 'Smartech',
+    src: ImageSmartech,
+    year: 2021,
+    description: 'Este fue mi primer proyecto, hecho solo con HTML y SCSS durante mi primer curso de desarrollo web.',
+    url: 'https://fnmallet.github.io/smartech/',
+    filter: 'Proyectos ficticios',
+    tag: 'Proyecto ficticio',
+    source: 'https://github.com/fnmallet/smartech'
+  },
+  {
+    name: 'Administrador de Stock',
+    src: ImageAdministradorDeStock,
+    year: 2022,
+    description: 'Este proyecto lo hice para el curso de JavaScript. Consiste en un ABM de productos en una tabla, completamente gestionado desde el lado del cliente.',
+    url: 'https://fnmallet.github.io/Administrador-de-Stock/',
+    filter: 'Proyectos ficticios',
+    tag: 'Proyecto ficticio',
+    source: 'https://github.com/fnmallet/Administrador-de-Stock'
+  },
 ];
 
 type FilterOption = 'Todos' | 'Proyectos reales' | 'Proyectos ficticios';
@@ -82,7 +106,7 @@ const ProjectsSection = () => {
     </div>
     <div className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-10'>
       {
-        projects.filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index} className='bg-black flex flex-col gap-4'>
+        projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index} className='bg-black flex flex-col gap-4'>
           <div className='flex flex-col gap-4'>
             <a href={project.url} target='_blank' rel='noopener noreferrer'>
               <img src={project.src} alt={project.name} className='rounded-xl' />
@@ -100,13 +124,25 @@ const ProjectsSection = () => {
               <span className='text-gray border border-gray rounded-xl py-1 px-2 w-fit'>
                 {project.tag}
               </span>
-              <a
-                className='text-white hover:text-primary underline'
-                href={project.url}
-                target='_blank' rel='noopener noreferrer'
-              >
-                Ver proyecto
-              </a>
+              <div className='flex gap-4'>
+                {
+                  project.source && <a
+                    className='fill-white hover:fill-primary'
+                    href={project.source}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <IconCode className='w-8 h-8' />
+                  </a>
+                }
+                <a
+                  className='fill-white hover:fill-primary'
+                  href={project.url}
+                  target='_blank' rel='noopener noreferrer'
+                >
+                  <IconLink className='w-8 h-8' />
+                </a>
+              </div>
             </div>
           </div>
         </article>)
