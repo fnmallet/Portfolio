@@ -8,7 +8,7 @@ type SectionProps = {
 }
 
 const Section = ({children, className, id}: SectionProps) => {
-  return <section id={id} className={cn('px-8 w-full max-w-100 md:max-w-150 box-border xl:max-w-292.5 mx-auto flex flex-col items-center justify-center', className)}>
+  return <section id={id} className={cn('px-8 w-full scroll-mt-32 max-w-100 md:max-w-150 box-border xl:max-w-292.5 mx-auto flex flex-col items-center justify-center', className)}>
     {children}
   </section>;
 };
