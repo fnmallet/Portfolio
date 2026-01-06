@@ -8,7 +8,8 @@ const RootLayout = () => {
   return <>
     <Header />
     <main 
-      className='flex flex-col gap-16 bg-black bg-[radial-gradient(circle,var(--color-primary)_1px,transparent_1px)] bg-size-[8rem_8rem] -z-10 bg-center'>
+      className='flex flex-col gap-16 bg-black'
+    >
       <Outlet />
     </main>
     <a

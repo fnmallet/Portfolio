@@ -6,7 +6,7 @@ import { ID } from '@/constants/id';
 import { publicUrl } from '@/config/publicUrl';
 
 export const HeroSection = () => {
-  return <div className={`${style['hero-container']} flex flex-col justify-center min-h-screen`}>
+  return <div className={`${style['hero-container']} flex flex-col justify-center min-h-screen z-10`}>
     <div className='bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[12rem_12rem] w-full h-full absolute top-0 left-0 z-10 opacity-25 bg-center'></div>
     <Section className='gap-6 bg-transparent scroll-mt-100' id={ID.section.home}>
       <div className='md:flex-row gap-8 md:gap-4 z-20'>

@@ -4,9 +4,9 @@ import SectionTitle from '@/components/SectionTitle';
 import { ID } from '@/constants/id';
 
 const AboutSection = () => {
-  return <Section id={ID.section.about} className='gap-8 bg-black'>
+  return <Section id={ID.section.about} className='gap-8'>
     <SectionTitle>Sobre mí</SectionTitle>
-    <div className='grid grid:rows-2 xl:grid-cols-2 text-center gap-8'>
+    <div className='grid grid:rows-2 xl:grid-cols-2 text-center gap-8 bg-black'>
       <div className='border row-start-2 xl:row-start-1 h-full flex flex-col justify-center items-center p-8 gap-8 rounded-2xl border-gray-dark'>
         <div className='text-white text-[1.2rem] flex flex-col gap-4'>
           <p>

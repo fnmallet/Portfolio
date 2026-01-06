@@ -8,11 +8,16 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 const RootPage = () => {
   return <>
     <HeroSection />
-    <AboutSection />
-    <TechnologiesSection />
-    <ProjectsSection />
-    <FAQSection />
-    <TestimonialsSection />
+    <div className='relative'>
+      <div className='fixed top-0 left-0 w-full h-dvh bg-[radial-gradient(circle,var(--color-primary)_1px,transparent_1px)] bg-size-[8rem_8rem] bg-center'></div>
+      <div className='relative z-20 flex flex-col gap-16'>
+        <AboutSection />
+        <TechnologiesSection />
+        <ProjectsSection />
+        <FAQSection />
+        <TestimonialsSection />
+      </div>
+    </div>
   </>;
 };
 
