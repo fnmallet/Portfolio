@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialsSection = () => {
-  return <Section id={ID.section.testimonials} className='gap-4'>
+  return <Section id={ID.section.testimonials} className='gap-4 mb-24'>
     <SectionTitle>Testimonios</SectionTitle>
     <p className='text-gray w-full'>Comentarios de clientes por proyectos que realicé con mi equipo.</p>
     <div className='max-w-full mt-4'>
