@@ -1,5 +1,5 @@
 import style from '@/components/sections/HeroSection/HeroSection.module.css';
-import Button from '@/components/Button';
+import LinkButton from '@/components/LinkButton';
 import { IconProyects } from '@/components/icons/IconSVGs';
 import Section from '@/components/Section';
 import { ID } from '@/constants/id';
@@ -22,15 +22,12 @@ export const HeroSection = () => {
           Construyendo proyectos que eficientes y escalables, siempre enfocado en crear experiencias digitales atractivas, accesibles y que realmente generen un impacto positivo para los usuarios.
         </p>
         <div className='grid grid-cols-2 gap-4 justify-items-center w-69.5'>
-          <a href={`#${ID.section.projects}`} className='w-full'>
-            <Button intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
-              Proyectos <IconProyects />
-            </Button>
-          </a>
-          <a href={publicUrl.documents.cv} target='_blank' className='w-full'>
-            <Button intent='secondary' className='px-0 w-full'>
-              Mirá mi CV</Button>
-          </a>
+          <LinkButton href={`#${ID.section.projects}`} intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
+            Proyectos <IconProyects />
+          </LinkButton>
+          <LinkButton href={publicUrl.documents.cv} intent='secondary' className='px-0 w-full'>
+            Mirá mi CV
+          </LinkButton>
         </div>
       </div>
     </Section>

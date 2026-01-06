@@ -1,22 +1,23 @@
 import { cn } from '@/utils/cn';
 import type { ReactNode } from 'react';
 
-type ButtonProps = {
+type LinkButtonProps = {
   children: ReactNode;
   className?: string;
   intent?: 'primary' | 'secondary';
   gradient?: boolean;
+  href: string;
 }
 
-const Button = ({ children, className, gradient, intent = 'primary' }: ButtonProps) => {
+const LinkButton = ({ children, className, gradient, intent = 'primary', href }: LinkButtonProps) => {
   const intentClasses = {
     primary: gradient ? 'bg-gradient-to-r from-primary to-secondary' : 'bg-primary hover:bg-primary/80',
     secondary: 'bg-black hover:bg-white hover:text-gray-dark border-gray-dark border-1'
   };
 
-  return <button className={cn('rounded-[16px] px-12 py-4 text-white cursor-pointer', intentClasses[intent], className)}>
+  return <a className={cn('rounded-[16px] px-12 py-4 text-white cursor-pointer text-center', intentClasses[intent], className)} href={href}>
     {children}
-  </button>;
+  </a>;
 };
 
-export default Button;
+export default LinkButton;
