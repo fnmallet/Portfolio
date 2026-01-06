@@ -1,5 +1,5 @@
 import Section from '@/components/Section';
-import ImageKaizen from '@/assets/images/projects/Kaizen.png';
+import ImageKaizen from '@/assets/images/projects/kaizen.png';
 import ImageIndustriasTango from '@/assets/images/projects/industrias-tango.png';
 import ImageBaugass from '@/assets/images/projects/baugass.png';
 import ImageAlfombrasTauro from '@/assets/images/projects/alfombras-tauro.png';
