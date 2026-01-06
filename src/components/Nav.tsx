@@ -6,11 +6,12 @@ import { cn } from '@/utils/cn';
 type NavProps = {
   id?: string;
   className?: string;
+  onNavLinkClick: () => void;
 }
 
 const activeLinkClass = ['xlc:font-bold', 'xlc:scale-110'];
 
-const Nav = ({ id, className }: NavProps) => {
+const Nav = ({ id, className, onNavLinkClick }: NavProps) => {
   useEffect(() => {
     const onScroll = () => {
       const sections = document.querySelectorAll('section');
@@ -56,19 +57,19 @@ const Nav = ({ id, className }: NavProps) => {
   }, []);
 
   return <nav id={id} className={cn('flex flex-col gap-6 text-base xlc:flex xlc:flex-row xlc:items-center', className)}>
-    <NavLink href={'#' + ID.section.about}>
+    <NavLink href={'#' + ID.section.about} onClick={onNavLinkClick}>
       Sobre mí
     </NavLink>
-    <NavLink href={'#' + ID.section.technologies}>
+    <NavLink href={'#' + ID.section.technologies} onClick={onNavLinkClick}>
       Tecnologías
     </NavLink>
-    <NavLink href={'#' + ID.section.projects}>
+    <NavLink href={'#' + ID.section.projects} onClick={onNavLinkClick}>
       Proyectos
     </NavLink>
-    <NavLink href={'#' + ID.section.faq}>
+    <NavLink href={'#' + ID.section.faq} onClick={onNavLinkClick}>
       Preguntas Frecuentes
     </NavLink>
-    <NavLink href={'#' + ID.section.testimonials}>
+    <NavLink href={'#' + ID.section.testimonials} onClick={onNavLinkClick}>
       Testimonios
     </NavLink>
   </nav>;

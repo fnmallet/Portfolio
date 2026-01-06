@@ -7,9 +7,10 @@ import { cn } from '@/utils/cn';
 type NavContainerProps = {
   isHamburgerMenuActive: boolean;
   id: string;
+  onNavLinkClick: () => void;
 }
 
-const NavContainer = ({ isHamburgerMenuActive, id }: NavContainerProps) => {
+const NavContainer = ({ isHamburgerMenuActive, id, onNavLinkClick }: NavContainerProps) => {
   const mediaQuery = useMediaQuery(`(min-width: ${BREAKPOINTS.xlc}px)`);
     
   return <div
@@ -21,7 +22,7 @@ const NavContainer = ({ isHamburgerMenuActive, id }: NavContainerProps) => {
     })}>
     <div className={'bg-black h-dvh w-screen absolute top-0 right-0 xlc:hidden ease-in-out pointer-events-none'}></div>
     <div className='h-dvh w-screen absolute top-0 right-0 flex px-8 pt-36 py-10 xlc:contents flex-col'>
-      <Nav className='z-10'/>
+      <Nav className='z-10' onNavLinkClick={onNavLinkClick}/>
       <div className='grow xlc:grow-0 flex items-end z-10'>
         <Button intent='primary' className='w-full'>Contactame</Button>
       </div>
