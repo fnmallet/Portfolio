@@ -24,23 +24,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Configurar Node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Configure Node
         uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: 'pnpm'
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: pnpm install
-      - name: Construir
+      - name: Build
         run: pnpm run build
-      - name: Configurar Pages
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Subir artefacto
+      - name: Upload artifacts
         uses: actions/upload-pages-artifact@v4
         with:
           # Subir la carpeta dist
           path: './dist'
-      - name: Desplegar a GitHub Pages
+      - name: Deploy on GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 #endregion contenido
