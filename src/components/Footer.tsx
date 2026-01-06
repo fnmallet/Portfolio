@@ -2,7 +2,7 @@ import { URL } from '@/config/url';
 import { IconGitHub } from '@/components/icons/IconSVGs';
 
 const Footer = () => {
-  return <footer className="py-22 bg-black gap-8 text-gray flex flex-col items-center text-center">
+  return <footer className="relative py-22 bg-black gap-8 text-gray flex flex-col items-center text-center">
     <a 
       title="Ver el código fuente del portfolio en GitHub"
       className='flex items-center gap-2 underline text-white transition-colors hover:text-primary'
