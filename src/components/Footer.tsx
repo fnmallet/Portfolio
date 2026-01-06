@@ -10,7 +10,7 @@ const Footer = () => {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <IconGitHub className='w-6 h-6' />Código fuente del portfolio
+      <IconGitHub className='w-8 h-8 fill-white' />Código fuente del portfolio
     </a>
     <p className="leading-8">© {new Date().getFullYear()} Fernando Mallet.</p>
   </footer>;
