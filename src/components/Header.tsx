@@ -33,7 +33,7 @@ const Header = () => {
         </button>
       </div>    
     </div>
-    <NavContainer id={NAV_CONTAINER_ID} isHamburgerMenuActive={isHamburgerMenuActive} />
+    <NavContainer id={NAV_CONTAINER_ID} isHamburgerMenuActive={isHamburgerMenuActive} onNavLinkClick={() => setIsHamburgerMenuActive(false)} />
   </header>;
 };
 
