@@ -109,7 +109,7 @@ const ProjectsSection = () => {
         projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index} className='bg-black flex flex-col gap-4'>
           <div className='flex flex-col gap-4'>
             <a href={project.url} target='_blank' rel='noopener noreferrer'>
-              <img src={project.src} alt={project.name} className='rounded-xl' />
+              <img src={project.src} alt={project.name} className='rounded-xl w-full h-46 md:h-64' />
             </a>
             <div className='flex flex-col gap-2'>
               <div className='flex justify-between text-white items-center'>
