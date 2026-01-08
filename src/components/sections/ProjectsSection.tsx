@@ -58,7 +58,7 @@ const projects: Project[] = [
     src: ImageAlfombrasTauro,
     year: 2025,
     description: 'En este proyecto se diseñó y desarrolló un sitio web para una empresa que vende principalmente alfombras. En este caso participamos dos desarrolladores frontend. Mi rol fue principalmente apoyar al otro desarrollador para crear toda la parte pública, además de ocuparme de desarrollar la interfaz para un administrador que permite al cliente modificar los productos y banners.',
-    url: 'https://kaizenlonas.com.ar/',
+    url: 'https://alfombrastauro.com/',
     filter: 'Proyectos reales',
     tag: 'Proyecto real'
   },
