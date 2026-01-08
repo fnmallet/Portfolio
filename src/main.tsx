@@ -4,6 +4,7 @@ import '@/styles/globals.css';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import RootLayout from '@/app/RootLayout';
 import RootPage from '@/app/RootPage';
+import ErrorPage from '@/app/ErrorPage';
 
 const root = document.getElementById('root');
 
@@ -14,6 +15,7 @@ createRoot(root).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path='*' element={<ErrorPage/>} />
         <Route path="/" element={<RootLayout />} >
           <Route index element={<RootPage />}/>
         </Route>

@@ -17,7 +17,7 @@ const SectionTitle = ({children}: SectionTitleProps) => {
     transition={{
       duration: 0.6
     }}
-    viewport={{ once: true, amount: 'all' }}
+    viewport={{ once: true, amount: 'some' }}
   >
     {children}
   </motion.h2>;
