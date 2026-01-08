@@ -28,10 +28,10 @@ const TestimonialsCarousel = ({ testimonials, options }: TestimonialsCarouselPro
               <img src={testimonial.avatar} alt='' className='rounded-full w-16 h-16'/>
               <div className='flex flex-col text-center xl:text-left gap-1'>
                 <p className='font-bold text-gray text-[1.5rem]'>{testimonial.name}</p>
-                <p className=''>{testimonial.role}</p>
+                <p>{testimonial.role}</p>
               </div>
             </div>
-            <p className='grow h-42 overflow-y-auto scrollbar-thin scrollbar-track-gray-dark scrollbar-thumb-gray'>{testimonial.text}</p>
+            <p className='grow h-42 overflow-y-auto scrollbar-thin scrollbar-track-gray-dark scrollbar-thumb-gray text-center md:text-left'>{testimonial.text}</p>
           </article>
         </div>)}
       </div>
