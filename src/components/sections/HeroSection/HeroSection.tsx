@@ -4,6 +4,7 @@ import { IconProyects } from '@/components/icons/IconSVGs';
 import Section from '@/components/Section';
 import { ID } from '@/constants/id';
 import { publicUrl } from '@/config/publicUrl';
+import { motion } from 'motion/react';
 
 export const HeroSection = () => {
   return <div className={`${style['hero-container']} flex flex-col justify-center min-h-screen z-10`}>
@@ -11,13 +12,41 @@ export const HeroSection = () => {
     <Section className='gap-6 bg-transparent scroll-mt-100' id={ID.section.home}>
       <div className='md:flex-row gap-8 md:gap-4 z-20'>
         <div className='font-semibold text-center text-white'>
-          <div className='font-bold flex flex-col text-[2.5rem] md:text-[3.75rem]'>
+          <motion.div
+            className='font-bold flex flex-col text-[2.5rem] md:text-[3.75rem]'
+            initial={{
+              opacity: 0,
+              y: -50
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{
+              duration: 0.6
+            }}
+            viewport={{ once: true, amount: 'some' }}
+          >
             <span className='md:contents'>Desarrollador {' '}</span>
             <span className='font-bold uppercase md:contents'>Frontend</span>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center gap-6 z-20'>
+      <motion.div 
+        className='flex flex-col justify-center items-center gap-6 z-20'
+        initial={{
+          opacity: 0,
+          scale: 0.8
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1
+        }}
+        transition={{
+          duration: 0.6
+        }}
+        viewport={{ once: true, amount: 'some' }}
+      >
         <p className='text-gray text-base md:text-[20px] xl:text-[2rem] text-center max-w-250'>
           Construyendo proyectos que eficientes y escalables, siempre enfocado en crear experiencias digitales atractivas, accesibles y que realmente generen un impacto positivo para los usuarios.
         </p>
@@ -29,7 +58,7 @@ export const HeroSection = () => {
             Mirá mi CV
           </LinkButton>
         </div>
-      </div>
+      </motion.div>
     </Section>
   </div>;
 };
