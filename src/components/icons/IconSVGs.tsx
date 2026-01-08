@@ -10,9 +10,9 @@ export const IconMoon = ({ className }: IconProps) => {
 
 export const IconProyects = ({ className }: IconProps) => {
   return <svg className={className} width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.2421 19.5531C15.3844 19.5531 19.5531 15.3844 19.5531 10.2421C19.5531 5.09981 15.3844 0.931152 10.2421 0.931152C5.09981 0.931152 0.931152 5.09981 0.931152 10.2421C0.931152 15.3844 5.09981 19.5531 10.2421 19.5531Z" stroke="white" strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M0.931152 10.2423H19.5531" stroke="white" strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10.2422 0.931396C12.5711 3.48106 13.8947 6.78988 13.9666 10.2424C13.8947 13.6948 12.5711 17.0036 10.2422 19.5533C7.91327 17.0036 6.58975 13.6948 6.51782 10.2424C6.58975 6.78988 7.91327 3.48106 10.2422 0.931396Z" stroke="white" strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10.2421 19.5531C15.3844 19.5531 19.5531 15.3844 19.5531 10.2421C19.5531 5.09981 15.3844 0.931152 10.2421 0.931152C5.09981 0.931152 0.931152 5.09981 0.931152 10.2421C0.931152 15.3844 5.09981 19.5531 10.2421 19.5531Z"  strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M0.931152 10.2423H19.5531"  strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10.2422 0.931396C12.5711 3.48106 13.8947 6.78988 13.9666 10.2424C13.8947 13.6948 12.5711 17.0036 10.2422 19.5533C7.91327 17.0036 6.58975 13.6948 6.51782 10.2424C6.58975 6.78988 7.91327 3.48106 10.2422 0.931396Z"  strokeWidth="1.86219" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>;
 };
 

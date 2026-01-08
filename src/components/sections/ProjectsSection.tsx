@@ -9,7 +9,10 @@ import { useState } from 'react';
 import { cn } from '@/utils/cn';
 import SectionTitle from '@/components/SectionTitle';
 import { ID } from '@/constants/id';
-import { IconCode, IconLink } from '../icons/IconSVGs';
+import { IconCode, IconLink } from '@/components/icons/IconSVGs';
+import AnimatedArticle from '@/components/AnimatedArticle';
+import AnimatedContainer from '@/components/AnimatedContainer';
+
 
 type Project = {
   name: string;
@@ -94,7 +97,7 @@ const ProjectsSection = () => {
       {
         filterOptions.map((filterOption, index) => <button
           key={index}
-          className={cn('px-4 py-2 text-white rounded-xl text-base whitespace-nowrap cursor-pointer', {
+          className={cn('px-4 py-2 text-white transition-colors duration-300 rounded-xl text-base whitespace-nowrap cursor-pointer', {
             'bg-primary': filterOption === selectedFilterOption,
             'outline outline-gray-dark bg-black': filterOption !== selectedFilterOption
           })}
@@ -104,12 +107,12 @@ const ProjectsSection = () => {
         </button>)
       }
     </div>
-    <div className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-10'>
+    <AnimatedContainer className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-10'>
       {
-        projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map((project, index) => <article key={index} className='bg-black flex flex-col gap-4'>
+        projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map(project => <AnimatedArticle key={project.name} className='bg-black flex flex-col gap-4 zoom-in'>
           <div className='flex flex-col gap-4'>
             <a href={project.url} target='_blank' rel='noopener noreferrer'>
-              <img src={project.src} alt={project.name} className='rounded-xl' />
+              <img src={project.src} alt={project.name} className='rounded-xl w-full h-46 md:h-64' />
             </a>
             <div className='flex flex-col gap-2'>
               <div className='flex justify-between text-white items-center'>
@@ -145,9 +148,9 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        </article>)
+        </AnimatedArticle>)
       }
-    </div>
+    </AnimatedContainer>
   </Section>;
 };
 

@@ -1,7 +1,7 @@
 import { IconMenu } from '@/components/icons/IconMenu';
 import { cn } from '@/utils/cn';
 import { useState } from 'react';
-import NavContainer from './NavContainer';
+import NavContainer from '@/components/NavContainer';
 import useWindow from '@/hooks/useWindow';
 
 const NAV_CONTAINER_ID = 'nav-container';
