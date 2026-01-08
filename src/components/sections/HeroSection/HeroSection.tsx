@@ -23,7 +23,7 @@ export const HeroSection = () => {
         </p>
         <div className='grid grid-cols-2 gap-4 justify-items-center w-69.5'>
           <LinkButton href={`#${ID.section.projects}`} intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
-            Proyectos <IconProyects />
+            Proyectos <IconProyects className='stroke-white group-hover:stroke-primary' />
           </LinkButton>
           <LinkButton href={publicUrl.documents.cv} intent='secondary' className='px-0 w-full'>
             Mirá mi CV
