@@ -54,7 +54,7 @@ export const HeroSection = () => {
           <LinkButton href={`#${ID.section.projects}`} intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
             Proyectos <IconProyects className='stroke-white group-hover:stroke-primary' />
           </LinkButton>
-          <LinkButton href={publicUrl.documents.cv} intent='secondary' className='px-0 w-full'>
+          <LinkButton href={publicUrl.documents.cv} intent='secondary' className='px-0 w-full' target='_blank'>
             Mirá mi CV
           </LinkButton>
         </div>
