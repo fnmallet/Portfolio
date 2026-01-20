@@ -1,5 +1,5 @@
 export const publicUrl = {
   documents: {
-    cv: '/documents/fernando_mallet_cv_2026.pdf'
+    cv: '/documents/Mallet_Fernando_CV_Frontend.pdf'
   }
 };
