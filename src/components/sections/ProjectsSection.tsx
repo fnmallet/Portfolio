@@ -1,7 +1,7 @@
 import Section from '@/components/Section';
 import ImageKaizen from '@/assets/images/projects/kaizen.png';
 import ImageIndustriasTango from '@/assets/images/projects/industrias-tango.png';
-import ImageBaugass from '@/assets/images/projects/baugass.png';
+import ImageFanelacteo from '@/assets/images/projects/fanelacteo.png';
 import ImageAlfombrasTauro from '@/assets/images/projects/alfombras-tauro.png';
 import ImageSmartech from '@/assets/images/projects/smartech.png';
 import ImageAdministradorDeStock from '@/assets/images/projects/administrador-de-stock.png';
@@ -45,11 +45,11 @@ const projects: Project[] = [
     tag: 'Proyecto real'
   },
   {
-    name: 'Baugass',
-    src: ImageBaugass,
-    year: 2025,
-    description: 'Se realizó un diseño y desarrollo de una landing page para un gasista con el fin de que pueda promocionar sus servicios.',
-    url: 'https://baugass.com.ar/',
+    name: 'Fanelácteo',
+    src: ImageFanelacteo,
+    year: 2026,
+    description: 'Se realizó un diseño y desarrollo de una landing page para una empresa productora de lácteos. En ella se presentan algunos de sus productos.',
+    url: 'https://fanelacteo.com.ar/',
     filter: 'Proyectos reales',
     tag: 'Proyecto real'
   },
