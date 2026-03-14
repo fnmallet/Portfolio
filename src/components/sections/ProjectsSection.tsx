@@ -44,7 +44,7 @@ const projects: Project[] = [
     name: 'Kaizen Lonas',
     src: ImageKaizen,
     year: 2025,
-    description: 'En este proyecto el cliente que contaba con un sitio web pidió un rediseño del mismo. El desarrollo se hizo desde cero con Next.js. El sitio muestra información del cliente y todos los productos que ofrece.',
+    description: 'En este proyecto el cliente quería un rediseño del sitio que tenían. Al ser un rediseño importante y no contar con el código fuente, el desarrollo se hizo desde cero. Se utilizó Next.js para mejorar la experiencia del usuario y favorecer el SEO. Se incluyó la integración con la la cuenta de Google Analytics del cliente.',
     url: 'https://kaizenlonas.com.ar/',
     type: projectTypes.professional
   },
@@ -52,7 +52,7 @@ const projects: Project[] = [
     name: 'Industrias Tango',
     src: ImageIndustriasTango,
     year: 2025,
-    description: 'El proyecto consisitió en el diseño y desarrollo de una landing page que muestra los implementos ofrecidos por el cliente.',
+    description: 'El proyecto consisitió en el diseño y desarrollo de una landing page. El cliente buscaba mostrar en una misma página sus productos, por lo que a cada tarjeta de producto se le incluyó un carrusel donde se pudieran ver todas las imágenes asociadas. Como detalle se incorporó la función de ampliar a pantalla completa cada carrusel.',
     url: 'https://industriastango.com.ar/',
     type: projectTypes.professional
   },
