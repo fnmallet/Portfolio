@@ -13,6 +13,10 @@ import { IconCode, IconLink } from '@/components/icons/IconSVGs';
 import AnimatedArticle from '@/components/AnimatedArticle';
 import AnimatedContainer from '@/components/AnimatedContainer';
 
+type ProjectType = {
+  filter: FilterOption;
+  tag: string;
+}
 
 type Project = {
   name: string;
@@ -20,29 +24,37 @@ type Project = {
   year: number;
   description: string;
   url: string;
-  filter: FilterOption;
-  tag: string;
+  type: ProjectType;
   source?: string;
 }
+
+const projectTypes: Record<'professional' | 'personal', ProjectType> = {
+  professional: {
+    filter: 'Profesionales',
+    tag: 'Proyecto profesional',
+  },
+  personal: {
+    filter: 'Personales',
+    tag: 'Proyecto personal'
+  }
+} as const;
 
 const projects: Project[] = [
   {
     name: 'Kaizen Lonas',
     src: ImageKaizen,
     year: 2025,
-    description: 'En este proyecto el cliente que contaba con un sitio web pidió un rediseño del mismo. El desarrollo se hizo desde cero con Next.js. El sitio muestra información del cliente y todos los productos que ofrece.',
+    description: 'En este proyecto el cliente quería un rediseño del sitio que tenían. Al ser un rediseño importante y no contar con el código fuente, el desarrollo se hizo desde cero. Se utilizó Next.js para mejorar la experiencia del usuario y favorecer el SEO. Se incluyó la integración con la la cuenta de Google Analytics del cliente.',
     url: 'https://kaizenlonas.com.ar/',
-    filter: 'Proyectos reales',
-    tag: 'Proyecto real',
+    type: projectTypes.professional
   },
   {
     name: 'Industrias Tango',
     src: ImageIndustriasTango,
     year: 2025,
-    description: 'El proyecto consisitió en el diseño y desarrollo de una landing page que muestra los implementos ofrecidos por el cliente.',
+    description: 'El proyecto consisitió en el diseño y desarrollo de una landing page. El cliente buscaba mostrar en una misma página sus productos, por lo que a cada tarjeta de producto se le incluyó un carrusel donde se pudieran ver todas las imágenes asociadas. Como detalle se incorporó la función de ampliar a pantalla completa cada carrusel.',
     url: 'https://industriastango.com.ar/',
-    filter: 'Proyectos reales',
-    tag: 'Proyecto real'
+    type: projectTypes.professional
   },
   {
     name: 'Fanelácteo',
@@ -50,8 +62,7 @@ const projects: Project[] = [
     year: 2026,
     description: 'Se realizó un diseño y desarrollo de una landing page para una empresa productora de lácteos. En ella se presentan algunos de sus productos.',
     url: 'https://fanelacteo.com.ar/',
-    filter: 'Proyectos reales',
-    tag: 'Proyecto real'
+    type: projectTypes.professional
   },
   {
     name: 'Alfombras Tauro',
@@ -59,8 +70,7 @@ const projects: Project[] = [
     year: 2025,
     description: 'En este proyecto se diseñó y desarrolló un sitio web para una empresa que vende principalmente alfombras. En este caso participamos dos desarrolladores frontend. Mi rol fue principalmente apoyar al otro desarrollador para crear toda la parte pública, además de ocuparme de desarrollar la interfaz para un administrador que permite al cliente modificar los productos y banners.',
     url: 'https://alfombrastauro.com/',
-    filter: 'Proyectos reales',
-    tag: 'Proyecto real'
+    type: projectTypes.professional
   },
   {
     name: 'Smartech',
@@ -68,8 +78,7 @@ const projects: Project[] = [
     year: 2021,
     description: 'Este fue mi primer proyecto, hecho solo con HTML y SCSS durante mi primer curso de desarrollo web.',
     url: 'https://fnmallet.github.io/smartech/',
-    filter: 'Proyectos ficticios',
-    tag: 'Proyecto ficticio',
+    type: projectTypes.personal,
     source: 'https://github.com/fnmallet/smartech'
   },
   {
@@ -78,15 +87,14 @@ const projects: Project[] = [
     year: 2022,
     description: 'Este proyecto lo hice para el curso de JavaScript. Consiste en un ABM de productos en una tabla, completamente gestionado desde el lado del cliente.',
     url: 'https://fnmallet.github.io/Administrador-de-Stock/',
-    filter: 'Proyectos ficticios',
-    tag: 'Proyecto ficticio',
+    type: projectTypes.personal,
     source: 'https://github.com/fnmallet/Administrador-de-Stock'
   },
 ];
 
-type FilterOption = 'Todos' | 'Proyectos reales' | 'Proyectos ficticios';
+type FilterOption = 'Todos' | 'Profesionales' | 'Personales';
 
-const filterOptions: FilterOption[] = ['Todos', 'Proyectos reales', 'Proyectos ficticios'];
+const filterOptions: FilterOption[] = ['Todos', 'Profesionales', 'Personales'];
 
 const ProjectsSection = () => {
   const [selectedFilterOption, setSelectedFilterOption] = useState<FilterOption>('Todos');
@@ -109,7 +117,7 @@ const ProjectsSection = () => {
     </div>
     <AnimatedContainer className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-10'>
       {
-        projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.filter).map(project => <AnimatedArticle key={project.name} className='bg-black flex flex-col gap-4 zoom-in'>
+        projects.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })).filter((project) => selectedFilterOption === 'Todos' || selectedFilterOption === project.type.filter).map(project => <AnimatedArticle key={project.name} className='bg-black flex flex-col gap-4 zoom-in'>
           <div className='flex flex-col gap-4'>
             <a href={project.url} target='_blank' rel='noopener noreferrer'>
               <img src={project.src} alt={project.name} className='rounded-xl w-full h-46 md:h-64' />
@@ -125,7 +133,7 @@ const ProjectsSection = () => {
           <div className='grow flex items-end'>
             <div className='flex w-full justify-between items-center'>
               <span className='text-gray border border-gray rounded-xl py-1 px-2 w-fit'>
-                {project.tag}
+                {project.type.tag}
               </span>
               <div className='flex gap-4'>
                 {
