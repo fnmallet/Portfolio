@@ -32,7 +32,7 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-      <motion.div 
+      <motion.div
         className='flex flex-col justify-center items-center gap-6 z-20'
         initial={{
           opacity: 0,
@@ -48,7 +48,7 @@ export const HeroSection = () => {
         viewport={{ once: true, amount: 'some' }}
       >
         <p className='text-gray text-base md:text-[20px] xl:text-[2rem] text-center max-w-250'>
-          Construyendo proyectos que eficientes y escalables, siempre enfocado en crear experiencias digitales atractivas, accesibles y que realmente generen un impacto positivo para los usuarios.
+          Construyendo proyectos eficientes y escalables, siempre enfocado en crear experiencias digitales atractivas, accesibles y que realmente generen un impacto positivo para los usuarios.
         </p>
         <div className='grid grid-cols-2 gap-4 justify-items-center w-69.5'>
           <LinkButton href={`#${ID.section.projects}`} intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
