@@ -33,7 +33,7 @@ export const HeroSection = () => {
         </div>
       </div>
       <motion.div
-        className='flex flex-col justify-center items-center gap-6 z-20'
+        className='flex flex-col justify-center items-center gap-12 z-20'
         initial={{
           opacity: 0,
           scale: 0.8
