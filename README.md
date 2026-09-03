@@ -1,19 +1,15 @@
-# Portfolio
+# Portfolio Personal | Fernando Mallet
 
-Este proyecto es una landing page personal que utilizo como portfolio profesional.
-El objetivo es presentar mi perfil, experiencia, proyectos y forma de trabajo.
+Landing page personal desarrollada para presentar mi trayectoria profesional, experiencia en desarrollo web y proyectos destacados.
 
-Lo que se busca es:
-- Presentar mi perfil
-- Mostrar proyectos reales y ficticios
-- Mostrar la forma de trabajo
-- Tener un portfolio prolijo y ordenado que muestre mi atención al detalle.
+🔗 **Deploy en producción:** [fernandomallet.dev](https://fernandomallet.dev)
 
-## Características
+## Características principales
 
-- Diseño responsive
-- Información clara y coherente
-- Uso de animaciones y transiciones
+- **Diseño responsive con metodología Mobile-First:** Adaptabilidad completa en distintos dispositivos y resoluciones.
+- **Utilización de componentes:** Estructura de código orientada a componentes reutilizables, tipados con TypeScript.
+- **Animaciones:** Transiciones y animaciones fluidas implementadas con Motion (Framer Motion).
+- **Rendimiento y optimización:** Estilos utilitarios con Tailwind CSS para una carga rápida y bundle reducido.
 
 ## Tecnologías
 
@@ -24,6 +20,9 @@ Lo que se busca es:
 - Motion
 
 ## Instalación y ejecución
+
+Descargar el código del repositorio y utilizar pnpm para instalar las dependencias y ejecutar el servidor localmente:
+
 ```
 pnpm install
 pnpm run dev
