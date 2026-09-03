@@ -27,8 +27,7 @@ export const HeroSection = () => {
             }}
             viewport={{ once: true, amount: 'some' }}
           >
-            <span className='md:contents'>Desarrollador {' '}</span>
-            <span className='font-bold uppercase md:contents'>Frontend</span>
+            <span className='md:contents'>Desarrollador Frontend</span>
           </motion.div>
         </div>
       </div>
@@ -47,8 +46,8 @@ export const HeroSection = () => {
         }}
         viewport={{ once: true, amount: 'some' }}
       >
-        <p className='text-gray text-base md:text-[20px] xl:text-[2rem] text-center max-w-250'>
-          Construyendo proyectos eficientes y escalables, siempre enfocado en crear experiencias digitales atractivas, accesibles y que realmente generen un impacto positivo para los usuarios.
+        <p className='text-gray text-base md:text-[20px] xl:text-[2.2rem] text-center max-w-250'>
+          Construyo interfaces web modernas y accesibles con React/Next.js, transformando diseños en código limpio, mantenible y de alto rendimiento.
         </p>
         <div className='grid grid-cols-2 gap-4 justify-items-center w-69.5'>
           <LinkButton href={`#${ID.section.projects}`} intent='primary' className='flex px-0 w-full justify-center gap-2 items-center'>
